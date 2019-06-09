@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-demo
+  annotations: 
+    app: demo
+  labels:
+    tyre: app
+    role: master
+  namespace: default
+spec:
+  containers:
+  - name: pod-demo-container
+    image: nginx:latest
+    imagePullPolicy: IfNotPresent
+    restartPolicy: Always
+    workingDir: /root
+    ports:
+      containerPort: 80
+      hostIP: 0.0.0.0
+      hostPort: 80
+      protocol: TCP
+    resources:
+      limits:
+        memory: "200Mi"
+        cpu: 1.5
+      requests:
+        memory: "100Mi"
+        cpu: 1
+  hostname: pod-demo
+  nodeName: k8s-master
+  nodeSelector:
+    type: app
+
+
+
+#lifecycle
+#livenessProbe
+#readinessProbe    
