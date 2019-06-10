@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-liveness-exec
+  namespace: default
+spec:
+  containers:
+  - name: liveness-exec-container
+    image: busybox:latest
+    imagePullPolicy: IfNotPresent
+    command: ["/bin/sh","touch /tmp/health; sleep 30; rm -rf /tmp/health;sleep 3600",]
+    livenessProbe: 
+      exec:
+        command: ["test" ,"-e", "/tmp/health"]
+      failureThreshold: 3
+      initialDelaySeconds: 3
+      periodSeconds: 3    
+
+
+
+
