@@ -15,7 +15,5 @@ spec:
       failureThreshold: 3
       initialDelaySeconds: 3
       periodSeconds: 3    
-
-
-
-
+  nodeSelector:
+   node.role:master
