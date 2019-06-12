@@ -1,4 +1,29 @@
 apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis
+  namespace: default
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: redis
+      role: logstore
+  template:
+    metadata: 
+      labels:
+        app: redis
+        role: logstore
+    spec:
+      containers:
+      - name: redis-container
+        image: redis:4.0-apline
+        ports:
+        - name: redis
+          containerPort: 6379
+
+---
+apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: myapp-daemonset
