@@ -14,8 +14,8 @@ spec:
     metadata:
       name: myapp-pod
       labels:
+        app: myapp
         release: stable
-        env: test
     spec:
       containers:
       - name: myapp-container
