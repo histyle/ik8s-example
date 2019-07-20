@@ -5,6 +5,7 @@ metadata:
   namespace: default
 spec:
   replicas: 2
+  selector:
     matchLabels:
       app: myapp
       release: stable
