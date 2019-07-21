@@ -35,6 +35,7 @@ spec:
       release: stable
   template:
     metadata:
+      name:  myapp-daemonset
       Labels:
         app: fliebeat
         release: stable
