@@ -36,7 +36,7 @@ spec:
   template:
     metadata:
       name:  myapp-daemonset
-      Labels:
+      labels:
         app: fliebeat
         release: stable
   spec:
