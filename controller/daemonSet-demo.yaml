@@ -31,8 +31,9 @@ metadata:
 spec:
   selector: 
     matchLabels:
-      app: filebeat
-      release: stable
+      labels:
+        app: filebeat
+        release: stable
   template:
     metadata:
       name:  myapp-daemonset
