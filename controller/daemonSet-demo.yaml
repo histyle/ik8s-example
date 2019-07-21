@@ -35,8 +35,9 @@ spec:
       release: stable
   template:
     metadata:
-      app: fliebeat
-      release: stable
+      Labels:
+        app: fliebeat
+        release: stable
   spec:
     containers:
     - name: filebeat
