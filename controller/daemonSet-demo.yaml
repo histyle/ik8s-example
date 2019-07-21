@@ -18,6 +18,7 @@ spec:
       containers:
       - name: redis-container
         image: redis:4.0-apline
+        imagePullPolicy: IfNotPresent
         ports:
         - name: redis
           containerPort: 6379
@@ -26,7 +27,7 @@ spec:
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
-  name: myapp-daemonset
+  name: filebeat-daemonset
   namespace: default
 spec:
   selector: 
@@ -35,14 +36,14 @@ spec:
       release: stable
   template:
     metadata:
-      name:  myapp-daemonset
+      name:  filebeat-daemonset
       labels:
         app: filebeat
         release: stable
     spec:
       containers:
       - name: filebeat
-        image: ikuberneters/filebeat:5.6.5-alpine
+        image: ikubernetes/filebeat:5.6.5-alpine
         env:
         - name: REDIS_HOST
           value: redis.default.svc.cluster.local
