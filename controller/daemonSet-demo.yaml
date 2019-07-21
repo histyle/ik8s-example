@@ -37,8 +37,8 @@ spec:
     metadata:
       name:  myapp-daemonset
       labels:
-        app: fliebeat
-        release: stable
+      app: filebeat
+      release: stable
   spec:
     containers:
     - name: filebeat
