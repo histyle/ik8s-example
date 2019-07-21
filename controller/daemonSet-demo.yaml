@@ -37,14 +37,14 @@ spec:
     metadata:
       name:  myapp-daemonset
       labels:
-      app: filebeat
-      release: stable
-  spec:
-    containers:
-    - name: filebeat
-      image: ikuberneters/filebeat:5.6.5-alpine
-      env:
-      - name: REDIS_HOST
-        value: redis.default.svc.cluster.local
-      - name: REDIS_LOG_LEVEL
-        value: info
+        app: filebeat
+        release: stable
+    spec:
+      containers:
+      - name: filebeat
+        image: ikuberneters/filebeat:5.6.5-alpine
+        env:
+        - name: REDIS_HOST
+          value: redis.default.svc.cluster.local
+        - name: REDIS_LOG_LEVEL
+          value: info
