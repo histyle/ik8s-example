@@ -32,7 +32,7 @@ metadata:
 spec: 
   selector:
     app: myapp
-  type: ClusterIP
+  clusterIP: None
   ports:
   - name: myapp
     port: 80
