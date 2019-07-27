@@ -48,8 +48,8 @@ spec:
   rules:
   - host: tomcat.k8s.com
     http:
-    - paths:
-      path:
+      paths:
+      - path:
         backend:
           serviceName: myapp-svc
           servicePort: 8080
