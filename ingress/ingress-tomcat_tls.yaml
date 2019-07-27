@@ -55,5 +55,5 @@ spec:
           servicePort: 8080
   tls:
   - hosts:
-    - tomcat.k8s.com
-    secretsName: tomcat-ingress-secret
+    - tomcat.k8s.coms
+    secretName: tomcat-ingress-secret
