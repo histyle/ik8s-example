@@ -46,9 +46,10 @@ metadata:
     kubersnetes.io/ingress.class: "nginx"
 spec: 
   rules:
-    host: tomcat.k8s.com
+  - host: tomcat.k8s.com
     http:
-    - paths:    
+    - paths:
+      path:
         backend:
           serviceName: myapp-svc
           servicePort: 8080
