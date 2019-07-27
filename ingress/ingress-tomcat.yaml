@@ -40,7 +40,7 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata: 
-  name: myapp-ingress
+  name: tomcat-ingress
   namespace: default
   annotations:
     kubersnetes.io/ingress.class: "nginx"
@@ -51,5 +51,5 @@ spec:
       paths:
       - path:
         backend:
-          serviceName: myapp-svc
+          serviceName: tomcat-svc
           servicePort: 8080
