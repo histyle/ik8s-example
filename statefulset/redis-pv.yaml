@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: redis-pv
+  namespace: default
+spec: 
+  storageClassName: redis
+  accessModes: 
+  - ReadWriteMany
+  capacity:
+    storage: 1Gi
+  persistentVolumeReclaimPolicy: Recycle
+  hostPath:
+    path: /data/pv/01
+    type: Directory
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: redis-pv
+  namespace: default
+spec: 
+  storageClassName: redis
+  accessModes: 
+  - ReadWriteMany
+  capacity:
+    storage: 1Gi
+  persistentVolumeReclaimPolicy: Recycle
+  hostPath:
+    path: /data/pv/02
+    type: Directory
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: redis-pv
+  namespace: default
+spec: 
+  storageClassName: redis
+  accessModes: 
+  - ReadWriteMany
+  capacity:
+    storage: 50Mi
+  persistentVolumeReclaimPolicy: Recycle
+  hostPath:
+    path: /data/pv/03
+    type: Directory
